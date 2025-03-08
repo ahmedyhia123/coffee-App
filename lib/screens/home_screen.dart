@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:coffee_app/widgets/coffee_types_list_view.dart';
 import 'package:coffee_app/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
@@ -41,6 +42,7 @@ class HomeScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 24),
                     child: CoffeeTypesListView(),
                   ),
+                  SvgPicture.asset('assets/images/coffee.svg')
                 ],
               )),
         ],
