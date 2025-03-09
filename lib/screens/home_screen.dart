@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:coffee_app/widgets/available_cups_list_view.dart';
 import 'package:coffee_app/widgets/coffee_types_list_view.dart';
 import 'package:coffee_app/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -15,14 +16,15 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
+        clipBehavior: Clip.none,
         children: [
           Positioned(
-            top: -270,
+            top: -260,
             left: 0,
             right: 0,
             child: Image.asset(
-              'assets/images/coffee_cup.png', // Replace with your image path
-              scale: 4.8, // Adjust as needed
+              scale: 4.6,
+              'assets/images/coffee_cup.png',
             ),
           ),
           Positioned.fill(
@@ -42,7 +44,13 @@ class HomeScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 24),
                     child: CoffeeTypesListView(),
                   ),
-                  SvgPicture.asset('assets/images/coffee.svg')
+                  SizedBox(
+                    height: 50,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 24),
+                    child: AvailableCupsListView(),
+                  ),
                 ],
               )),
         ],

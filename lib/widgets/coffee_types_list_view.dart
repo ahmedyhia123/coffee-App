@@ -10,7 +10,7 @@ class CoffeeTypesListView extends StatefulWidget {
 }
 
 class _CoffeeTypesListViewState extends State<CoffeeTypesListView> {
-  int currentIndex = 1;
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -41,11 +41,10 @@ class _CoffeeTypesListViewState extends State<CoffeeTypesListView> {
                     width: 5,
                   ),
                   CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    radius: 18,
-                    child: SvgPicture.asset(
-                        height: 18, 'assets/images/coffee.svg'),
-                  ),
+                      backgroundColor: Colors.transparent,
+                      radius: 18,
+                      child: Image.asset(
+                          'assets/coffees/${types[index]['path']}')),
                   Text(
                     types[index]['name']!,
                     style: TextStyle(
